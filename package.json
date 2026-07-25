@@ -5,11 +5,6 @@
   "description": "VeryFS Framework runtime and editor utilities for Unity",
   "unity": "2021.3",
   "type": "library",
-  "author": {
-    "name": "JaXE",
-    "email": "ddd@ddd.com",
-    "url": "https://www.veryfreestyle.com"
-  },
   "dependencies": {
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.veryfreestyle.unity.fairygui": "https://github.com/veryfreestyle/fairygui-upm.git",
