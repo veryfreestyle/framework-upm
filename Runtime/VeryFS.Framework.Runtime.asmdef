@@ -1,0 +1,18 @@
+{
+    "name": "VeryFS.Framework.Runtime",
+    "rootNamespace": "VeryFS.Framework.Runtime",
+    "references": [
+        "UniTask",
+        "FairyGUI",
+        "LitJson"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

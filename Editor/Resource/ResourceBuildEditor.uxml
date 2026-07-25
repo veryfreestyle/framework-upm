@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement style="flex-grow: 0; flex-direction: row;" />
+    <uie:ObjectField label="Package Settings" name="settingsAsset" type="VeryFS.Framework.Editor.Resource.ResourcePackageBuildSettings, VeryFS.Framework.Editor" allow-scene-objects="false" />
+    <ui:VisualElement name="out" style="flex-grow: 0; flex-direction: row;">
+        <ui:TextField picking-mode="Ignore" label="Output Path" name="OutputPath" readonly="true" style="flex-grow: 1;" />
+        <ui:Button text="Open" parse-escape-sequences="true" display-tooltip-when-elided="true" name="OpenFolder" />
+    </ui:VisualElement>
+    <ui:TextField picking-mode="Ignore" label="Package Name" name="PackageName" readonly="true" style="flex-grow: 0;" />
+    <ui:TextField picking-mode="Ignore" label="Build Version" name="BuildVersion" readonly="false" style="flex-grow: 0; height: 18px;" />
+    <ui:Toggle label="AutoUpdateVersion" name="AutoUpdateVersion" />
+    <uie:EnumField label="Bundle Name Style" type="VeryFS.Framework.Runtime.Resource.AssetBundleNameStyle, VeryFS.Framework.Runtime" name="BundleNameStyle" />
+    <uie:EnumField label="Build Platform" type="VeryFS.Framework.Runtime.Resource.ResourcePlatform, VeryFS.Framework.Runtime" name="Platform" />
+    <uie:EnumField label="Build Mode" type="VeryFS.Framework.Editor.Resource.ResourceBuildMode, VeryFS.Framework.Editor" name="BuildMode" />
+    <ui:VisualElement style="flex-grow: 1; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; align-items: center;">
+        <ui:Button text="Start Build" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StartButton" enable-rich-text="true" style="background-color: rgb(8, 115, 1); -unity-font-style: normal; font-size: 14px; width: 150px;" />
+        <ui:Button text="Link Bundles to StreamingAssets" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LinkButton" enable-rich-text="true" style="background-color: rgb(38, 9, 176); -unity-font-style: normal; font-size: 14px; width: 237px; margin-top: 10px;" />
+        <ui:Button text="Remove StreamingAssets links" parse-escape-sequences="true" display-tooltip-when-elided="true" name="UnlinkButton" enable-rich-text="false" style="background-color: rgb(159, 29, 0); -unity-font-style: normal; font-size: 14px; width: 237px; margin-top: 10px;" />
+    </ui:VisualElement>
+</ui:UXML>
