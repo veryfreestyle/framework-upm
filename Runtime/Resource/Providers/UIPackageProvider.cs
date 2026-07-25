@@ -19,6 +19,11 @@ namespace VeryFS.Framework.Runtime.Resource
             base.OnDestroy();
             if (Status == EStatus.Succeed)
             {
+                // Editor 退出时 StageEngine.OnApplicationQuit 会先跑 UIPackage.RemoveAllPackages()，
+                // 注册表已清空，此时再 RemovePackage 必炸，跳过即可，非脏包残留
+                if (FairyGUI.StageEngine.beingQuit)
+                    return;
+
                 var pkg = (FairyGUI.UIPackage)this.Result;
                 try
                 {
@@ -26,8 +31,8 @@ namespace VeryFS.Framework.Runtime.Resource
                 }
                 catch (Exception e)
                 {
-                    // Editor 下也要出声：RemovePackage 半途失败会在 FairyGUI 注册表残留脏包
-                    Debug.LogWarning($"{e}, ScriptExecutionOrder maybe need < StageEngine");
+                    // RemovePackage 半途失败会在 FairyGUI 注册表残留脏包
+                    Debug.LogWarning(e);
                 }
             }
         }
