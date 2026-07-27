@@ -10,7 +10,6 @@ using UnityEngine.Rendering.Universal;
 #endif
 using FairyGUI;
 using VeryFS.Framework.Runtime.Resource;
-using VeryFS.Framework.Runtime.UI;
 
 namespace VeryFS.Framework.Runtime
 {
@@ -171,10 +170,13 @@ namespace VeryFS.Framework.Runtime
 
         protected abstract void OnAppResume();
 
+        /// <summary>
+        /// 退出清理：卸载所有 UI 包 + 释放资源模块。
+        /// 不清理路由——路由（ViewRouter）属应用机制而非库能力，由宿主自行实例化并在 override 里释放；
+        /// 库侧不再假设宿主一定用本包的 ViewRouter 单例。
+        /// </summary>
         protected virtual void OnAppQuit()
         {
-            // 释放所有UI资源，包括卸载所有UI包和清理ViewRouter。
-            ViewRouter.Instance.Dispose();
             UIModule.UnloadAllUIPackages();
             ResourceModule.Default.Dispose();
         }
